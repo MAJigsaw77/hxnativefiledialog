@@ -26,7 +26,7 @@
 
 		<vflag name="-framework" value="AppKit" if="macos" />
 
-		<lib name="-lgtk-3" />
+		<lib name="-lgtk-3" if="linux" />
 
 		<files id="nativefiledialog" />
 	</target>
