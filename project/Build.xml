@@ -25,6 +25,7 @@
 
 	<target id="haxe">
 		<lib name="comctl32.lib" if="windows" />
+		<lib name="ole32.lib" if="windows" />
 
 		<vflag name="-framework" value="AppKit" if="macos" />
 
