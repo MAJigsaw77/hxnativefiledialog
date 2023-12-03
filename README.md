@@ -15,6 +15,20 @@ Or through `Git`, if you want the latest updates
 haxelib git hxnativefiledialog https://github.com/MAJigsaw77/hxnativefiledialog.git
 ```
 
+### Dependencies
+
+On ***Linux*** you need to install `gtk3` from your distro's package manager.
+
+* [Debian](https://debian.org) based distributions:
+  ```bash
+  sudo apt-get install libgtk-3-dev 
+  ```
+
+* [Arch](https://archlinux.org) based distributions:
+  ```bash
+  sudo pacman -S gtk-3 
+  ```
+
 ### Usage Example
 
 Check out the [Samples Folder](samples/) for examples on how to use this library.
