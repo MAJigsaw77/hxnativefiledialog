@@ -25,7 +25,5 @@ class Main
 			default:
 				Sys.println('Error: ${NFD.GetError()}');
 		}
-
-		Sys.sleep(60);
 	}
 }

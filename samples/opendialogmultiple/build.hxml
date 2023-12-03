@@ -3,4 +3,3 @@
 -lib hxnativefiledialog
 -main Main
 -cpp bin
--cmd bin/Main
