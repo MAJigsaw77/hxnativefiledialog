@@ -1,0 +1,20 @@
+{
+    "name": "hxnativefiledialog",
+    "url": "https://github.com/MAJigsaw77/hxnativefiledialog",
+    "license": "MIT",
+    "tags": [
+        "cpp",
+        "haxe",
+        "nativefiledialog"
+    ],
+    "description": "Haxe/hxcpp @:native bindings for Native File Dialog.",
+    "version": "1.0.0",
+    "releasenote": "First Release.",
+    "contributors": [
+        "MAJigsaw77"
+    ],
+    "classPath": "source",
+    "dependencies": {
+        "hxcpp": ""
+    }
+}

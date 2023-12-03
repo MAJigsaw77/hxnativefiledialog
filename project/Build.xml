@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<pragma once="true" />
+
+	<files id="haxe">
+		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src/include" />
+	</files>
+
+	<files id="__main__">
+		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src/include" />
+	</files>
+
+	<files id="nativefiledialog">
+		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src/include" />
+		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src" />
+
+		<file name="${haxelib:hxnativefiledialog}/project/nativefiledialog/src/nfd_common.c" />
+
+		<file name="${haxelib:hxnativefiledialog}/project/nativefiledialog/src/nfd_win.cpp" if="windows" />
+		<file name="${haxelib:hxnativefiledialog}/project/nativefiledialog/src/nfd_cocoa.m" if="macos" />
+		<file name="${haxelib:hxnativefiledialog}/project/nativefiledialog/src/nfd_gtk.c" if="linux" />
+	</files>
+
+	<target id="haxe">
+		<lib name="comctl32.lib" if="windows" />
+
+		<vflag name="-framework" value="AppKit" if="macos" />
+
+		<lib name="-lgtk-3" />
+
+		<files id="nativefiledialog" />
+	</target>
+</xml>

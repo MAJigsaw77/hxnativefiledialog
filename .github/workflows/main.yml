@@ -1,0 +1,32 @@
+name: Testing
+on:
+  push:
+    branches: main
+  workflow_dispatch:
+jobs:
+  Job:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sample: [opendialog, opendialogmultiple, pickfolder, savedialog]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          submodules: true
+
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@master
+        with:
+          haxe-version: latest
+
+      - name: Installing Dependencies
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo apt-get install libgtk-3-dev
+
+      - name: Compiling 
+        run: |
+          haxelib git hxnativefiledialog https://github.com/MAJigsaw77/hxnativefiledialog.git ${{github.ref_name}} --quiet
+          cd samples/${{matrix.sample}}
+          haxe build.hxml
