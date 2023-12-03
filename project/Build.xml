@@ -11,6 +11,8 @@
 	</files>
 
 	<files id="nativefiledialog">
+		<compilerflag value="-Igtk-3.0" if="linux" />
+
 		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src/include" />
 		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src" />
 
