@@ -26,7 +26,7 @@ On ***Linux*** you need to install `gtk3` from your distro's package manager.
 
 * [Arch](https://archlinux.org) based distributions:
   ```bash
-  sudo pacman -S gtk-3 
+  sudo pacman -S gtk3 
   ```
 
 ### Usage Example
