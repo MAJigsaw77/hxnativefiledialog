@@ -23,4 +23,4 @@ Check out the [Samples Folder](samples/) for examples on how to use this library
 
 **hxnativefiledialog** is made available under the **MIT License**. Check [LICENSE](./LICENSE) for more information.
 
-**Native File Dialog** is made available under the **zlib License**. Check [Native' File Dialog LICENSE](https://github.com/mlabbe/nativefiledialog/blob/master/LICENSE) for more information.
+**Native File Dialog** is made available under the **zlib License**. Check [Native's File Dialog LICENSE](https://github.com/mlabbe/nativefiledialog/blob/master/LICENSE) for more information.
