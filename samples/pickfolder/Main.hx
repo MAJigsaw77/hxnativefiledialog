@@ -9,7 +9,7 @@ class Main
 	{
 		var outPath:String = null;
 
-		switch (NFD.PickFolder("png,jpg;pdf", null, outPath))
+		switch (NFD.PickFolder(null, outPath))
 		{
 			case NFD_OKAY:
 				Sys.println('Success! $outPath');
