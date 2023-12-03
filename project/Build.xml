@@ -13,12 +13,14 @@
 	<files id="nativefiledialog">
 		<section if="linux">
 			<compilerflag value="-I/usr/include/gtk-3.0" />
-			<compilerflag value="-I/usr/x86_64-linux-gnu/gtk-3.0/include" />
+			<compilerflag value="-I/usr/lib/x86_64-linux-gnu/gtk-3.0/include" />
+
+			<compilerflag value="-I/usr/include/glib-2.0" />
+			<compilerflag value="-I/usr/lib/x86_64-linux-gnu/glib-2.0/include" />
+
 			<compilerflag value="-I/usr/include/atk-1.0" />
 			<compilerflag value="-I/usr/include/cairo" />
 			<compilerflag value="-I/usr/include/pango-1.0" />
-			<compilerflag value="-I/usr/include/glib-2.0" />
-			<compilerflag value="-I/usr/x86_64-linux-gnu/glib-2.0/include" />
 			<compilerflag value="-I/usr/include/pixman-1" />
 			<compilerflag value="-I/usr/include/freetype2" />
 			<compilerflag value="-I/usr/include/libpng12" />
@@ -52,11 +54,8 @@
 			<lib name="-lpangocairo-1.0" />
 			<lib name="-lcairo" />
 			<lib name="-lpango-1.0" />
-			<lib name="-lfreetype" />
-			<lib name="-lfontconfig" />
 			<lib name="-lgobject-2.0" />
 			<lib name="-lgmodule-2.0" />
-			<lib name="-lgthread-2.0" />
 			<lib name="-lglib-2.0" />
 		</section>
 
