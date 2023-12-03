@@ -22,13 +22,10 @@ jobs:
           haxe-version: latest
 
       - name: Installing Dependencies
-        run: |
-          sudo apt-get install libgtk-3-dev
+        run: sudo apt-get install libgtk-3-dev
 
       - name: Config Dependencies
-        run: |
-          pkg-config --cflags --libs gtk+-3.0
-          pkg-config --cflags --libs glib-2.0
+        run: pkg-config --cflags --libs gtk+-3.0
 
       - name: Compiling 
         run: |
