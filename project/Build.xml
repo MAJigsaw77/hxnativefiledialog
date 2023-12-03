@@ -24,8 +24,10 @@
 	</files>
 
 	<target id="haxe">
-		<lib name="comctl32.lib" if="windows" />
-		<lib name="ole32.lib" if="windows" />
+		<section if="windows">
+			<lib name="comctl32.lib" />
+			<lib name="ole32.lib" />
+		</section>
 
 		<vflag name="-framework" value="AppKit" if="macos" />
 
