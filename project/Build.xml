@@ -11,8 +11,10 @@
 	</files>
 
 	<files id="nativefiledialog">
-		<compilerflag value="-I/usr/include/gtk-3.0" if="linux" />
-		<compilerflag value="-I/usr/include/glib-2.0" if="linux" />
+		<section if="linux">
+			<compilerflag value="-I/usr/include/gtk-3.0" />
+			<compilerflag value="-I/usr/include/glib-2.0" />
+		</section>
 
 		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src/include" />
 		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src" />
@@ -29,7 +31,10 @@
 
 		<vflag name="-framework" value="AppKit" if="macos" />
 
-		<lib name="-lgtk-3" if="linux" />
+		<section if="linux">
+			<lib name="-lgtk-3" />
+			<lib name="-lglib-2.0" />
+		</section>
 
 		<files id="nativefiledialog" />
 	</target>
