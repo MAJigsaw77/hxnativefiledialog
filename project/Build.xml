@@ -27,6 +27,7 @@
 		<section if="windows">
 			<lib name="comctl32.lib" />
 			<lib name="ole32.lib" />
+			<lib name="shell32.lib" />
 		</section>
 
 		<vflag name="-framework" value="AppKit" if="macos" />
