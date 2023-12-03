@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 jobs:
   Job:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -20,6 +20,10 @@ jobs:
         uses: krdlab/setup-haxe@master
         with:
           haxe-version: latest
+
+      - name: Installing Dependencies
+        run: |
+          sudo apt-get install libgtk-3-dev
 
       - name: Compiling 
         run: |
