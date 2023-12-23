@@ -31,7 +31,7 @@ On ***Linux*** you need to install `gtk3` from your distro's package manager.
 
 * [Gentoo](https://gentoo.org) based distributions:
   ```bash
-  sudo emerge x11-libs/gtk+
+  sudo emerge x11-libs/gtk+:3
   ```
 
 ### Usage Example
