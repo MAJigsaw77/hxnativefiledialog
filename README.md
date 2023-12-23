@@ -21,12 +21,17 @@ On ***Linux*** you need to install `gtk3` from your distro's package manager.
 
 * [Debian](https://debian.org) based distributions:
   ```bash
-  sudo apt-get install libgtk-3-dev 
+  sudo apt-get install libgtk-3-dev
   ```
 
 * [Arch](https://archlinux.org) based distributions:
   ```bash
-  sudo pacman -S gtk3 
+  sudo pacman -S gtk3
+  ```
+
+* [Gentoo](https://gentoo.org) based distributions:
+  ```bash
+  sudo emerge x11-libs/gtk+
   ```
 
 ### Usage Example
