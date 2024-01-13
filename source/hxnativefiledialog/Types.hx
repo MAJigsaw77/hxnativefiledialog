@@ -15,7 +15,7 @@ class Types {} // blank
 extern class NFDPathSet_T
 {
 	@:native('nfdpathset_t')
-	static function create():NFDPathSet_T;
+	static function alloc():NFDPathSet_T;
 
 	var buf:cpp.CharStar;
 	var indices:cpp.RawPointer<cpp.SizeT>; /* byte offsets into buf */
