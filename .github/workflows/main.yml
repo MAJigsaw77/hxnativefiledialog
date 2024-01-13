@@ -29,6 +29,7 @@ jobs:
 
       - name: Compiling 
         run: |
-          haxelib git hxnativefiledialog https://github.com/MAJigsaw77/hxnativefiledialog.git ${{github.ref_name}} --quiet
+          haxelib install hxcpp --quiet
+          haxelib dev hxnativefiledialog .
           cd samples/${{matrix.sample}}
           haxe build.hxml
