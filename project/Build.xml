@@ -47,7 +47,13 @@
 	</files>
 
 	<target id="haxe">
-		<section if="windows">
+		<section if="mingw">
+			<lib name="-lcomctl32" />
+			<lib name="-lole32" />
+			<lib name="-lshell32" />
+		</section>
+
+		<section if="windows" unless="mingw">
 			<lib name="comctl32.lib" />
 			<lib name="ole32.lib" />
 			<lib name="shell32.lib" />
