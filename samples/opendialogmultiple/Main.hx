@@ -9,7 +9,9 @@ class Main
 	{
 		var pathSet:NFDPathSet_T = NFDPathSet_T.alloc();
 
-		switch (NFD.OpenDialogMultiple("png,jpg;pdf", null, cpp.RawPointer.addressOf(pathSet)))
+		var result:NFDResult_T = NFD.OpenDialogMultiple("png,jpg;pdf", null, cpp.RawPointer.addressOf(pathSet));
+
+		switch (result)
 		{
 			case NFD_OKAY:
 				for (i in 0...NFD.PathSet_GetCount(cpp.RawPointer.addressOf(pathSet)))
