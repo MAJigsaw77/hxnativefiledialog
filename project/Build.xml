@@ -11,6 +11,32 @@
 	</files>
 
 	<files id="nativefiledialog">
+		<section if="linux">
+			<compilerflag value="-I/usr/include/gtk-3.0" />
+			<compilerflag value="-I/usr/include/at-spi2-atk/2.0" />
+			<compilerflag value="-I/usr/include/at-spi-2.0" />
+
+			<compilerflag value="-I/usr/include/dbus-1.0" />
+			<compilerflag value="-I/usr/lib/x86_64-linux-gnu/dbus-1.0/include" />
+
+			<compilerflag value="-I/usr/include/gio-unix-2.0" />
+			<compilerflag value="-I/usr/include/pango-1.0" />
+			<compilerflag value="-I/usr/include/fribidi" />
+			<compilerflag value="-I/usr/include/harfbuzz" />
+			<compilerflag value="-I/usr/include/atk-1.0" />
+			<compilerflag value="-I/usr/include/cairo" />
+			<compilerflag value="-I/usr/include/pixman-1" />
+			<compilerflag value="-I/usr/include/uuid" />
+			<compilerflag value="-I/usr/include/freetype2" />
+			<compilerflag value="-I/usr/include/gdk-pixbuf-2.0" />
+			<compilerflag value="-I/usr/include/libpng16" />
+			<compilerflag value="-I/usr/include/libmount" />
+			<compilerflag value="-I/usr/include/blkid" />
+
+			<compilerflag value="-I/usr/include/glib-2.0" />
+			<compilerflag value="-I/usr/lib/x86_64-linux-gnu/glib-2.0/include" />
+		</section>
+
 		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src/include" />
 		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src" />
 
@@ -36,10 +62,18 @@
 		<vflag name="-framework" value="AppKit" if="macos" />
 
 		<section if="linux">
-			<flag value="`pkg-config" />
-			<flag value="--cflags" />
-			<flag value="--libs" />
-			<flag value="gtk+-3.0`" />
+			<lib name="-lgtk-3" />
+			<lib name="-lgdk-3" />
+			<lib name="-lpangocairo-1.0" />
+			<lib name="-lpango-1.0" />
+			<lib name="-lharfbuzz" />
+			<lib name="-latk-1.0" />
+			<lib name="-lcairo-gobject" />
+			<lib name="-lcairo" />
+			<lib name="-lgdk_pixbuf-2.0" />
+			<lib name="-lgio-2.0" />
+			<lib name="-lgobject-2.0" />
+			<lib name="-lglib-2.0" />
 		</section>
 
 		<files id="nativefiledialog" />
