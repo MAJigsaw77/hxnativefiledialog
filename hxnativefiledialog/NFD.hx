@@ -12,7 +12,7 @@ extern class NFD
 {
 	/* Single file open dialog */
 	@:native('NFD_OpenDialog')
-	static function OpenDialog(filterList:NFDConstCharStar_T, defaultPath:NFDConstCharStar_T, outPath:cpp.Star<NFDCharStar_T>):NFDResult_T;
+	static function OpenDialog(filterList:NFDConstCharStar_T, defaultPath:NFDConstCharStar_T, outPath:cpp.RawPointer<NFDCharStar_T>):NFDResult_T;
 
 	/* Multiple file open dialog */
 	@:native('NFD_OpenDialogMultiple')
@@ -20,11 +20,11 @@ extern class NFD
 
 	/* Save dialog */
 	@:native('NFD_SaveDialog')
-	static function SaveDialog(filterList:NFDConstCharStar_T, defaultPath:NFDConstCharStar_T, outPath:cpp.Star<NFDCharStar_T>):NFDResult_T;
+	static function SaveDialog(filterList:NFDConstCharStar_T, defaultPath:NFDConstCharStar_T, outPath:cpp.RawPointer<NFDCharStar_T>):NFDResult_T;
 
 	/* Select folder dialog */
 	@:native('NFD_PickFolder')
-	static function PickFolder(defaultPath:NFDConstCharStar_T, outPath:cpp.Star<NFDCharStar_T>):NFDResult_T;
+	static function PickFolder(defaultPath:NFDConstCharStar_T, outPath:cpp.RawPointer<NFDCharStar_T>):NFDResult_T;
 
 	/* Get last error -- set when nfdresult_t returns NFD_ERROR */
 	@:native('NFD_GetError')
