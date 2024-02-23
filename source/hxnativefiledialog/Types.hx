@@ -29,6 +29,22 @@ extern abstract NFDCharStar_T(cpp.RawPointer<NFDChar_T>) to (cpp.RawPointer<NFDC
 		return this;
 }
 
+extern abstract NFDConstCharStar_T(cpp.RawConstPointer<NFDChar_T>) to (cpp.RawConstPointer<NFDChar_T>)
+{
+	inline function new(s:String):Void
+		this = untyped s.__s;
+
+	@:from
+	static public inline function fromString(s:String):NFDConstCharStar_T
+		return new NFDConstCharStar_T(s);
+
+	@:to extern public inline function toString():String
+		return new String(untyped this);
+
+	@:to extern public inline function toPointer():cpp.RawConstPointer<NFDChar_T>
+		return this;
+}
+
 /* opaque data structure -- see NFD_PathSet_* */
 @:buildXml('<include name="${haxelib:hxnativefiledialog}/project/Build.xml" />')
 @:include('nfd.h')
