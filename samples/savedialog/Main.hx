@@ -9,7 +9,7 @@ class Main
 	{
 		var savePath:NFDCharStar_T = null;
 
-		var result:NFDResult_T = NFD.SaveDialog("png,jpg;pdf", null, savePath);
+		var result:NFDResult_T = NFD.SaveDialog("png,jpg;pdf", null, cpp.RawPointer.addressOf(savePath));
 
 		switch (result)
 		{

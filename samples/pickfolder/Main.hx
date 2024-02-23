@@ -9,7 +9,7 @@ class Main
 	{
 		var outPath:NFDCharStar_T = null;
 
-		var result:NFDResult_T = NFD.PickFolder(null, outPath);
+		var result:NFDResult_T = NFD.PickFolder(null, cpp.RawPointer.addressOf(outPath));
 
 		switch (result)
 		{
