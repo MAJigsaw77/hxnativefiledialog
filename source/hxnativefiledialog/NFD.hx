@@ -24,7 +24,7 @@ extern class NFD
 
 	/* Select folder dialog */
 	@:native('NFD_PickFolder')
-	static function PickFolder(defaultPath:NFDConstCharStar_T, outPath:cpp.Star<cpp.NFDCharStar_T>):NFDResult_T;
+	static function PickFolder(defaultPath:NFDConstCharStar_T, outPath:cpp.Star<NFDCharStar_T>):NFDResult_T;
 
 	/* Get last error -- set when nfdresult_t returns NFD_ERROR */
 	@:native('NFD_GetError')
