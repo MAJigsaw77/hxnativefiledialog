@@ -6,6 +6,29 @@ package hxnativefiledialog;
 
 class Types {} // blank
 
+/* denotes UTF-8 char */
+@:native('nfdchar_t')
+@:scalar
+@:coreType
+@:notNull
+extern abstract NFDChar_T from Int to Int {}
+
+extern abstract NFDCharStar_T(cpp.RawPointer<NFDChar_T>) to (cpp.RawPointer<NFDChar_T>)
+{
+	inline function new(s:String):Void
+		this = untyped s.__s;
+
+	@:from
+	static public inline function fromString(s:String):NFDCharStar_T
+		return new NFDCharStar_T(s);
+
+	@:to extern public inline function toString():String
+		return new String(untyped this);
+
+	@:to extern public inline function toPointer():cpp.RawPointer<NFDChar_T>
+		return this;
+}
+
 /* opaque data structure -- see NFD_PathSet_* */
 @:buildXml('<include name="${haxelib:hxnativefiledialog}/project/Build.xml" />')
 @:include('nfd.h')
