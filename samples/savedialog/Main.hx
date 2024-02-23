@@ -7,9 +7,11 @@ class Main
 {
 	public static function main():Void
 	{
-		var savePath:String = null;
+		var savePath:cpp.CharStar = null;
 
-		switch (NFD.SaveDialog("png,jpg;pdf", null, savePath))
+		var result:NFDResult_T = NFD.SaveDialog("png,jpg;pdf", null, savePath);
+
+		switch (result)
 		{
 			case NFD_OKAY:
 				Sys.println('Success! $savePath');
