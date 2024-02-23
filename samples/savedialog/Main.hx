@@ -7,7 +7,7 @@ class Main
 {
 	public static function main():Void
 	{
-		var savePath:cpp.CharStar = null;
+		var savePath:NFDCharStar_T = null;
 
 		var result:NFDResult_T = NFD.SaveDialog("png,jpg;pdf", null, savePath);
 

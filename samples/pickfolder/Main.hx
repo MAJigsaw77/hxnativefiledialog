@@ -7,7 +7,7 @@ class Main
 {
 	public static function main():Void
 	{
-		var outPath:cpp.CharStar = null;
+		var outPath:NFDCharStar_T = null;
 
 		var result:NFDResult_T = NFD.PickFolder(null, outPath);
 

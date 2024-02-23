@@ -36,7 +36,7 @@ extern class NFD
 
 	/* Get the UTF-8 path at offset index */
 	@:native('NFD_PathSet_GetPath')
-	static function PathSet_GetPath(pathSet:cpp.RawConstPointer<NFDPathSet_T>, index:cpp.SizeT):cpp.CharStar;
+	static function PathSet_GetPath(pathSet:cpp.RawConstPointer<NFDPathSet_T>, index:cpp.SizeT):NFDCharStar_T;
 
 	/* Free the pathSet */
 	@:native('NFD_PathSet_Free')

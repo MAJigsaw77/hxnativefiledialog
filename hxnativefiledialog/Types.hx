@@ -56,7 +56,7 @@ extern class NFDPathSet_T
 	@:native('nfdpathset_t')
 	static function alloc():NFDPathSet_T;
 
-	var buf:cpp.CharStar;
+	var buf:NFDCharStar_T;
 	var indices:cpp.RawPointer<cpp.SizeT>; /* byte offsets into buf */
 	var count:cpp.SizeT; /* number of indices into buf */
 }
