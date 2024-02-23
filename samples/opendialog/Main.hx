@@ -7,9 +7,11 @@ class Main
 {
 	public static function main():Void
 	{
-		var outPath:String = null;
+		var outPath:cpp.CharStar = null;
 
-		switch (NFD.OpenDialog("png,jpg;pdf", null, outPath))
+		var result:NFDResult_T = NFD.OpenDialog("png,jpg;pdf", null, outPath);
+
+		switch (result)
 		{
 			case NFD_OKAY:
 				Sys.println('Success! $outPath');
