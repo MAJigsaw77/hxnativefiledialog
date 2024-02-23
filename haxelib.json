@@ -13,7 +13,6 @@
     "contributors": [
         "MAJigsaw77"
     ],
-    "classPath": "source",
     "dependencies": {
         "hxcpp": ""
     }
