@@ -12,23 +12,23 @@ extern class NFD
 {
 	/* Single file open dialog */
 	@:native('NFD_OpenDialog')
-	static function OpenDialog(filterList:cpp.ConstCharStar, defaultPath:cpp.ConstCharStar, outPath:cpp.Star<NFDCharStar_T>):NFDResult_T;
+	static function OpenDialog(filterList:NFDConstCharStar_T, defaultPath:NFDConstCharStar_T, outPath:cpp.Star<NFDCharStar_T>):NFDResult_T;
 
 	/* Multiple file open dialog */
 	@:native('NFD_OpenDialogMultiple')
-	static function OpenDialogMultiple(filterList:cpp.ConstCharStar, defaultPath:cpp.ConstCharStar, outPath:cpp.RawPointer<NFDPathSet_T>):NFDResult_T;
+	static function OpenDialogMultiple(filterList:NFDConstCharStar_T, defaultPath:NFDConstCharStar_T, outPath:cpp.RawPointer<NFDPathSet_T>):NFDResult_T;
 
 	/* Save dialog */
 	@:native('NFD_SaveDialog')
-	static function SaveDialog(filterList:cpp.ConstCharStar, defaultPath:cpp.ConstCharStar, outPath:cpp.Star<NFDCharStar_T>):NFDResult_T;
+	static function SaveDialog(filterList:NFDConstCharStar_T, defaultPath:NFDConstCharStar_T, outPath:cpp.Star<NFDCharStar_T>):NFDResult_T;
 
 	/* Select folder dialog */
 	@:native('NFD_PickFolder')
-	static function PickFolder(defaultPath:cpp.ConstCharStar, outPath:cpp.Star<cpp.NFDCharStar_T>):NFDResult_T;
+	static function PickFolder(defaultPath:NFDConstCharStar_T, outPath:cpp.Star<cpp.NFDCharStar_T>):NFDResult_T;
 
 	/* Get last error -- set when nfdresult_t returns NFD_ERROR */
 	@:native('NFD_GetError')
-	static function GetError():cpp.ConstCharStar;
+	static function GetError():NFDConstCharStar_T;
 
 	/* Get the number of entries stored in pathSet */
 	@:native('NFD_PathSet_GetCount')
