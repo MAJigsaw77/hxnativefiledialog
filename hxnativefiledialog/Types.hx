@@ -75,6 +75,10 @@ extern enum abstract NFDResult_T(NFDResult_T_Impl)
 	@:native('NFD_CANCEL')
 	var NFD_CANCEL;
 
+	@:from
+	static public inline function fromInt(i:Int):NFDResult_T
+		return cast i;
+
 	@:to extern public inline function toInt():Int
 		return untyped this;
 }
