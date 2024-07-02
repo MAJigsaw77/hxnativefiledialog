@@ -1,19 +1,28 @@
 package hxnativefiledialog;
 
+/**
+ * Dummy class for importing Native File Dialog types.
+ */
 #if !cpp
 #error 'Native File Dialog supports only C++ target platforms.'
 #end
+class Types {}
 
-class Types {} // blank
-
-/* denotes UTF-8 char */
+/**
+ * A UTF-8 character in the Native File Dialog library.
+ */
+@:buildXml('<include name="${haxelib:hxnativefiledialog}/project/Build.xml" />')
+@:include('nfd.h')
 @:native('nfdchar_t')
 @:scalar
 @:coreType
 @:notNull
 extern abstract NFDChar_T from Int to Int {}
 
-extern abstract NFDCharStar_T(cpp.RawPointer<NFDChar_T>) to (cpp.RawPointer<NFDChar_T>)
+/**
+ * A pointer to a UTF-8 character in the Native File Dialog library.
+ */
+extern abstract NFDCharStar_T(cpp.RawPointer<NFDChar_T>) to cpp.RawPointer<NFDChar_T>
 {
 	inline function new(s:String):Void
 		this = untyped s.__s;
@@ -29,7 +38,10 @@ extern abstract NFDCharStar_T(cpp.RawPointer<NFDChar_T>) to (cpp.RawPointer<NFDC
 		return this;
 }
 
-extern abstract NFDConstCharStar_T(cpp.RawConstPointer<NFDChar_T>) to (cpp.RawConstPointer<NFDChar_T>)
+/**
+ * A constant pointer to a UTF-8 character in the Native File Dialog library.
+ */
+extern abstract NFDConstCharStar_T(cpp.RawConstPointer<NFDChar_T>) to cpp.RawConstPointer<NFDChar_T>
 {
 	inline function new(s:String):Void
 		this = untyped s.__s;
@@ -45,7 +57,9 @@ extern abstract NFDConstCharStar_T(cpp.RawConstPointer<NFDChar_T>) to (cpp.RawCo
 		return this;
 }
 
-/* opaque data structure -- see NFD_PathSet_* */
+/**
+ * An opaque data structure for managing paths in the Native File Dialog library.
+ */
 @:buildXml('<include name="${haxelib:hxnativefiledialog}/project/Build.xml" />')
 @:include('nfd.h')
 @:unreflective
@@ -57,21 +71,30 @@ extern class NFDPathSet_T
 	static function alloc():NFDPathSet_T;
 
 	var buf:NFDCharStar_T;
-	var indices:cpp.RawPointer<cpp.SizeT>; /* byte offsets into buf */
-	var count:cpp.SizeT; /* number of indices into buf */
+	var indices:cpp.RawPointer<cpp.SizeT>; // byte offsets into buf
+	var count:cpp.SizeT; // number of indices into buf
 }
 
+/**
+ * Result codes from the Native File Dialog operations.
+ */
 extern enum abstract NFDResult_T(NFDResult_T_Impl)
 {
-	/* programmatic error */
+	/**
+	 * Programmatic error
+	 */
 	@:native('NFD_ERROR')
 	var NFD_ERROR;
 
-	/* user pressed okay, or successful return */
+	/**
+	 * User pressed okay, or successful return
+	 */
 	@:native('NFD_OKAY')
 	var NFD_OKAY;
 
-	/* user pressed cancel */
+	/**
+	 * User pressed cancel
+	 */
 	@:native('NFD_CANCEL')
 	var NFD_CANCEL;
 
