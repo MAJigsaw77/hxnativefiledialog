@@ -14,7 +14,16 @@ class Main
 		switch (result)
 		{
 			case NFD_OKAY:
-				Sys.println('Success! $outPath');
+				if (outPath != null)
+				{
+					var outPathString:String = cast(outPath, String);
+
+					Sys.println('Success! $outPathString');
+
+					cpp.Stdlib.nativeFree(untyped outPath);
+				}
+				else
+					Sys.println('Success, but outPath is null.');
 			case NFD_CANCEL:
 				Sys.println('User pressed cancel.');
 			default:
