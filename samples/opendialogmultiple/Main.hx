@@ -14,13 +14,24 @@ class Main
 		switch (result)
 		{
 			case NFD_OKAY:
-				for (i in 0...NFD.PathSet_GetCount(cpp.RawPointer.addressOf(pathSet)))
-				{
-					final path:String = cast(NFD.PathSet_GetPath(cpp.RawPointer.addressOf(pathSet), i), String);
+				final count:cpp.SizeT = NFD.PathSet_GetCount(cpp.RawConstPointer.addressOf(pathSet));
 
-					Sys.println('Path! $i: $path');
+				for (i in 0...count)
+				{
+					var path:NFDCharStar_T = NFD.PathSet_GetPath(cpp.RawConstPointer.addressOf(pathSet), i);
+
+					if (path != null)
+					{
+						final pathString:String = cast(path, String);
+
+						Sys.println('Path $i: $pathString');
+
+						cpp.Stdlib.nativeFree(untyped path);
+					}
+					else
+						Sys.println('Path at index $i is null.');
 				}
-		
+
 				NFD.PathSet_Free(cpp.RawPointer.addressOf(pathSet));
 			case NFD_CANCEL:
 				Sys.println('User pressed cancel.');
