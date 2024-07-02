@@ -1,6 +1,5 @@
 package;
 
-import cpp.Stdlib;
 import hxnativefiledialog.NFD;
 import hxnativefiledialog.Types;
 
@@ -19,7 +18,7 @@ class Main
 				{
 					Sys.println('Success!');
 					Sys.println(cast(outPath, String));
-					Stdlib.nativeFree(untyped outPath);
+					cpp.Stdlib.nativeFree(untyped outPath);
 				}
 				else
 					Sys.println('Success, but outPath is null.');
