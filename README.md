@@ -19,20 +19,55 @@ haxelib git hxnativefiledialog https://github.com/MAJigsaw77/hxnativefiledialog.
 
 On ***Linux*** you need to install `gtk3` from your distro's package manager.
 
-* [Debian](https://debian.org) based distributions:
-  ```bash
-  sudo apt-get install libgtk-3-dev
-  ```
+<details>
+<summary>Commands list</summary>
 
-* [Arch](https://archlinux.org) based distributions:
-  ```bash
-  sudo pacman -S gtk3
-  ```
+#### Debian based distributions ([Debian](https://debian.org)):
+```bash
+sudo apt-get install libgtk-3-dev
+```
 
-* [Gentoo](https://gentoo.org) based distributions:
-  ```bash
-  sudo emerge x11-libs/gtk+:3
-  ```
+#### Arch based distributions ([Arch](https://archlinux.org)):
+```bash
+sudo pacman -S gtk3
+```
+
+#### Fedora based distributions ([Fedora](https://getfedora.org)):
+```bash
+sudo dnf install gtk3
+```
+
+#### Red Hat Enterprise Linux (RHEL):
+```bash
+sudo dnf install gtk3
+```
+
+#### openSUSE based distributions ([openSUSE](https://www.opensuse.org)):
+```bash
+sudo zypper install gtk3
+```
+
+#### Gentoo based distributions ([Gentoo](https://gentoo.org)):
+```bash
+sudo emerge x11-libs/gtk+:3
+```
+
+#### Slackware based distributions ([Slackware](https://www.slackware.com)):
+```bash
+sudo slackpkg install gtk+3
+```
+
+#### Void Linux ([Void Linux](https://voidlinux.org)):
+```bash
+sudo xbps-install -S gtk+3
+```
+
+#### NixOS ([NixOS](https://nixos.org)):
+```bash
+nix-env -iA nixpkgs.gtk3
+```
+
+</details>
 
 ### Usage Example
 
