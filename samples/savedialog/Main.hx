@@ -14,7 +14,16 @@ class Main
 		switch (result)
 		{
 			case NFD_OKAY:
-				Sys.println('Success! $savePath');
+				if (savePath != null)
+				{
+					var savePathString:String = cast(savePath, String);
+
+					Sys.println('Success! $savePathString');
+
+					cpp.Stdlib.nativeFree(untyped savePath);
+				}
+				else
+					Sys.println('Success, but savePath is null.');
 			case NFD_CANCEL:
 				Sys.println('User pressed cancel.');
 			default:
