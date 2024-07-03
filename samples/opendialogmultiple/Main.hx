@@ -18,16 +18,10 @@ class Main
 
 				for (i in 0...count)
 				{
-					var path:NFDCharStar_T = NFD.PathSet_GetPath(cpp.RawConstPointer.addressOf(pathSet), i);
+					final path:NFDCharStar_T = NFD.PathSet_GetPath(cpp.RawConstPointer.addressOf(pathSet), i);
 
 					if (path != null)
-					{
-						final pathString:String = cast(path, String);
-
-						Sys.println('Path $i: $pathString');
-
-						cpp.Stdlib.nativeFree(untyped path);
-					}
+						Sys.println('Path $i: ${cast(path, String)}');
 					else
 						Sys.println('Path at index $i is null.');
 				}
