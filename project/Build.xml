@@ -12,9 +12,9 @@
 
 	<files id="nativefiledialog">
 		<section if="linux">
-			<compilerflag value="`pkg-config" />
+			<compilerflag value="$(pkg-config" />
 			<compilerflag value="--cflags" />
-			<compilerflag value="gtk+-3.0`" />
+			<compilerflag value="gtk+-3.0)" />
 		</section>
 
 		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src/include" />
@@ -42,9 +42,9 @@
 		<vflag name="-framework" value="AppKit" if="macos" />
 
 		<section if="linux">
-			<flag value="`pkg-config" />
+			<flag value="$(pkg-config" />
 			<flag value="--libs" />
-			<flag value="gtk+-3.0`" />
+			<flag value="gtk+-3.0)" />
 		</section>
 
 		<files id="nativefiledialog" />
