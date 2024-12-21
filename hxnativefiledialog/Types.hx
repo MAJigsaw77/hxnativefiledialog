@@ -67,8 +67,7 @@ extern abstract NFDConstCharStar_T(cpp.RawConstPointer<NFDChar_T>) to cpp.RawCon
 @:native('nfdpathset_t')
 extern class NFDPathSet_T
 {
-	@:native('nfdpathset_t')
-	static function alloc():NFDPathSet_T;
+	function new():Void;
 
 	var buf:NFDCharStar_T;
 	var indices:cpp.RawPointer<cpp.SizeT>; // byte offsets into buf

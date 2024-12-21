@@ -7,7 +7,7 @@ class Main
 {
 	public static function main():Void
 	{
-		var pathSet:NFDPathSet_T = NFDPathSet_T.alloc();
+		var pathSet:NFDPathSet_T = new NFDPathSet_T();
 
 		var result:NFDResult_T = NFD.OpenDialogMultiple("png,jpg;pdf", null, cpp.RawPointer.addressOf(pathSet));
 
