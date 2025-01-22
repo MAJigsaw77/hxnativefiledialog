@@ -40,6 +40,8 @@
 		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src/include" />
 		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src" />
 
+		<compilerflag value="-DFTG_IGNORE_UNICODE" if="windows" />
+
 		<file name="${haxelib:hxnativefiledialog}/project/nativefiledialog/src/nfd_common.c" />
 		<file name="${haxelib:hxnativefiledialog}/project/nativefiledialog/src/nfd_win.cpp" if="windows" />
 		<file name="${haxelib:hxnativefiledialog}/project/nativefiledialog/src/nfd_cocoa.m" if="macos" />
