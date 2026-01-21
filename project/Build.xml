@@ -12,7 +12,7 @@
 
 	<files id="nativefiledialog">
 		<section if="linux">
-			<compilerflag value="-I/usr/include/gtk-3.0" />
+			<compilerflag value='`pkg-config --cflags gtk+-3.0`' />
 			<compilerflag value="-I/usr/include/at-spi2-atk/2.0" />
 			<compilerflag value="-I/usr/include/at-spi-2.0" />
 
@@ -32,9 +32,6 @@
 			<compilerflag value="-I/usr/include/libpng16" />
 			<compilerflag value="-I/usr/include/libmount" />
 			<compilerflag value="-I/usr/include/blkid" />
-
-			<compilerflag value="-I/usr/include/glib-2.0" />
-			<compilerflag value="-I/usr/lib/glib-2.0/include" />
 		</section>
 
 		<compilerflag value="-I${haxelib:hxnativefiledialog}/project/nativefiledialog/src/include" />
